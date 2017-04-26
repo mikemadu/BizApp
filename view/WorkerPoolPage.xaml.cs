@@ -27,5 +27,17 @@ namespace BizApp.view
             vm = new viewmodel.WorkerPoolViewModel();
             this.DataContext = vm;
         }
+
+        
+        private void On_FirstName_Focus(object sender, RoutedEventArgs e)
+        {
+            textBox.Clear();
+
+        }
+
+        private void On_LastName_Focused(object sender, RoutedEventArgs e)
+        { textBox_Copy.Clear();
+
+        }
     }
 }

@@ -36,9 +36,9 @@
         </DataTemplate>
     </Page.Resources>
     <Grid>
-        <ListBox x:Name="listBox" ItemsSource="{Binding ApplicantList}" SelectedItem="{Binding SelectedApplicant}" Margin="10,27,0,0"  Style="{StaticResource myListboxStyle}"  ItemTemplate="{StaticResource ListboxTemplate}" HorizontalAlignment="Left" Width="292" Height="151" VerticalAlignment="Top"/>
-        <TextBox x:Name="textBox" Height="23" Margin="85,225,0,0" TextWrapping="Wrap" Text="{Binding Lastname_s}" VerticalAlignment="Top" HorizontalAlignment="Left" Width="121"/>
-        <TextBox x:Name="textBox_Copy" Height="23" Margin="86,253,0,0" TextWrapping="Wrap" Text="{Binding Firstname_s}" VerticalAlignment="Top" HorizontalAlignment="Left" Width="121"/>
+        <ListBox x:Name="listBox" ItemsSource="{Binding CollectionView}" SelectedItem="{Binding SelectedApplicant}" Margin="10,27,0,0"  Style="{StaticResource myListboxStyle}"  ItemTemplate="{StaticResource ListboxTemplate}" HorizontalAlignment="Left" Width="292" Height="151" VerticalAlignment="Top" HorizontalContentAlignment="Center"/>
+        <TextBox x:Name="textBox" Height="23" Margin="85,225,0,0"  Background="{Binding SearchColor_LastName}"  TextWrapping="NoWrap" Text="{Binding Lastname_s, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" HorizontalAlignment="Left" Width="121"  HorizontalContentAlignment="Center" GotFocus="On_LastName_Focused"/>
+        <TextBox x:Name="textBox_Copy" Height="23" Margin="86,253,0,0" Background="{Binding SearchColor_FirstName}"  TextWrapping="NoWrap" Text="{Binding Firstname_s, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" HorizontalAlignment="Left" Width="121" HorizontalContentAlignment="Center" GotFocus="On_FirstName_Focus"/>
         <TextBlock HorizontalAlignment="Left" Height="23" Margin="10,226,0,0" TextWrapping="Wrap" Text="Last Name:" VerticalAlignment="Top" Width="78" FontWeight="Bold"/>
         <TextBlock HorizontalAlignment="Left" Height="23" Margin="10,256,0,0" TextWrapping="Wrap" Text="First Name:" VerticalAlignment="Top" Width="78" FontWeight="Bold"/>
         <TextBlock HorizontalAlignment="Left" Height="26" Margin="17,194,0,0" TextWrapping="Wrap" Text="SEARCH:" VerticalAlignment="Top" Width="89" Foreground="#FFE41919" FontWeight="Bold" FontSize="16" FontStyle="Italic"/>

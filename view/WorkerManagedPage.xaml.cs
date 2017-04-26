@@ -11,6 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BizApp.viewmodel;
 
 namespace BizApp.view
 {
@@ -18,16 +19,17 @@ namespace BizApp.view
     /// Interaction logic for WorkerManagedPage.xaml
     /// </summary>
     public partial class WorkerManagedPage : Page
+
     {
+        WorkerPoolViewModel vm;
         public WorkerManagedPage()
         {
             InitializeComponent();
+            vm = new WorkerPoolViewModel();
+            this.DataContext = vm;
         }
 
-        public void DataGrid_GotFocus()
-        {
-
-        }
+        
 
         private void DataGrid_GotFocus(object sender, RoutedEventArgs e)
         {
