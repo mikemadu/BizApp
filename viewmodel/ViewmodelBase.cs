@@ -6,13 +6,13 @@ using System.Text;
 
 namespace BizApp.viewmodel
 {
-    class ViewmodelBase : INotifyPropertyChanged
+   public class ViewmodelBase : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
         // This method is called by the Set accessor of each property.
        
-        private void NotifyPropertyChanged(String propertyName = "")
+        public void NotifyPropertyChanged(String propertyName ="")
         {
             if (PropertyChanged != null)
             {

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace BizApp.model
 {
-    class ApplicantModel
+  public  class ApplicantModel
 
     {
         public List<Applicant> GetApplicantList()
@@ -18,6 +18,8 @@ namespace BizApp.model
             app.Lastname = "Chuks";
             app.Firstname = "Micky";
             app.MiddleName = "C.";
+            app.Phone = "926800876";
+            app.Job = "Electronics Engineer";
             app.id = 1;
             lst.Add(app);//add to the list
 
@@ -26,6 +28,8 @@ namespace BizApp.model
             app.Lastname = "Santos";
             app.Firstname = "Vicky";
             app.MiddleName = "P.";
+            app.Phone = "927453789";
+            app.Job = "Mechanical Engineer";
             app.id = 2;
             lst.Add(app);//add to the list
 
@@ -34,6 +38,8 @@ namespace BizApp.model
             app.Lastname = "Petronelo";
             app.Firstname = "John";
             app.MiddleName = "W.";
+            app.Phone = "933008877";
+            app.Job = "Accountant";
             app.id = 3;
             lst.Add(app);//add to the list
 
@@ -42,6 +48,8 @@ namespace BizApp.model
             app.Lastname = "Escardo";
             app.Firstname = "Marilyn";
             app.MiddleName = "M.";
+            app.Phone = "09725447863";
+            app.Job = "Store Keeper";
             app.id = 4;
             lst.Add(app);//add to the list
 
@@ -52,6 +60,8 @@ namespace BizApp.model
           public  string Lastname { get; set; }
             public string Firstname { get; set; }
             public string MiddleName { get; set; }
+            public string Phone { get; set; }
+            public string Job { get; set; }
             public DateTime BirthDate { get; set; }
             public int id { get; set; }
 

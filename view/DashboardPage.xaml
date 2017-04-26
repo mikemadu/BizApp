@@ -5,13 +5,58 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:BizApp.view"
       mc:Ignorable="d" 
-      d:DesignHeight="300" d:DesignWidth="439.073"
+      d:DesignHeight="390" d:DesignWidth="599"
       Title="DashboardPage">
 
     <Grid>
-        <Button x:Name="button" Content="New Applicant" HorizontalAlignment="Left" Margin="141,15,0,0" VerticalAlignment="Top" Width="129" Click="button_Click"/>
-        <Button x:Name="button1" Content="Applicant Pool" HorizontalAlignment="Left" Margin="287,15,0,0" VerticalAlignment="Top" Width="142" Click="button1_Click"/>
-        <Button Content="Settings" HorizontalAlignment="Left" Margin="10,15,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
+        <Button x:Name="button" Content="New Applicant" ToolTip="Encode Details for a New Applicant" HorizontalAlignment="Left" Margin="122,156,0,0" VerticalAlignment="Top" Width="129" Click="button_Click" Height="77" RenderTransformOrigin="0.5,0.5" FontWeight="Bold">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-23.422"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Button x:Name="button1" Content="Applicant Pool" ToolTip="View and Modify Details of Encoded Applicants" HorizontalAlignment="Left" Margin="244,159,0,0" VerticalAlignment="Top" Width="142" Click="button1_Click" Height="86" RenderTransformOrigin="0.5,0.5" FontWeight="Bold">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-10.855"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Button Content="Settings" HorizontalAlignment="Left" Margin="41,157,0,0" ToolTip="Configure Settings for This Application" VerticalAlignment="Top" Width="75" Click="Button_Click_1" Height="62" RenderTransformOrigin="0.5,0.5" FontWeight="Bold">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-43.135"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <TextBlock HorizontalAlignment="Left" Height="64" Margin="179,49,0,0" TextWrapping="Wrap" Text="BizApp Dashboard" VerticalAlignment="Top" Width="331" FontSize="36">
+            <TextBlock.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFC9DE68" Offset="0"/>
+                    <GradientStop Color="#FFD0FF00" Offset="0.98"/>
+                </LinearGradientBrush>
+            </TextBlock.Background>
+        </TextBlock>
+        <Button x:Name="button1_Copy" Content="Managed Applicants" ToolTip="View Applicants in the Process" HorizontalAlignment="Left" Margin="382,198,0,0" VerticalAlignment="Top" Width="172" Click="managed_Click" Height="118" RenderTransformOrigin="0.5,0.5" FontWeight="Bold">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="10.961"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
 
     </Grid>
 </Page>

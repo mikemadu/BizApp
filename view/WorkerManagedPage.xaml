@@ -1,0 +1,32 @@
+﻿<Page x:Class="BizApp.view.WorkerManagedPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:BizApp.view"
+      mc:Ignorable="d" 
+      d:DesignHeight="347.883" d:DesignWidth="599"
+      Title="Managed Workers Page">
+
+    <Grid>
+        <DataGrid  SelectedItem="{Binding SelectedApplicant}"  ItemsSource="{Binding ListOfWorkers,UpdateSourceTrigger=PropertyChanged}" FrozenColumnCount="4"   DataGridCell.Selected="DataGrid_GotFocus"   Opacity="{Binding MainListOpacity}" 
+                  VirtualizingStackPanel.VirtualizationMode="Recycling"   
+                  VirtualizingStackPanel.IsVirtualizing="True"
+                  AutoGenerateColumns="False" Grid.Row="1"  CanUserDeleteRows="True" 
+                  HorizontalAlignment="Stretch"  Name="dg" Width="980" HorizontalGridLinesBrush="#FFCEC9C9" 
+                  VerticalGridLinesBrush="#FFC4C2C2" CanUserSortColumns="True" CanUserReorderColumns="True"                   
+                  Margin="5,0" SelectionUnit="FullRow" Height="{Binding HeightOfList}" VerticalAlignment="Top">
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="180"  Binding="{Binding Job}" IsReadOnly="True"  Header="Category" />
+                <DataGridTextColumn Width="100"  Binding="{Binding Lastname}" IsReadOnly="True" FontWeight="Bold"  Header="Last Name" />
+                <DataGridTextColumn Width="100"  Binding="{Binding Firstname}"  IsReadOnly="True"  FontWeight="Bold"   Header="First Name" />
+                <DataGridTextColumn Width="85"  Binding="{Binding Phone}" Header="Phone" />
+           
+                            
+                   
+            </DataGrid.Columns>
+          
+        </DataGrid>
+
+    </Grid>
+</Page>

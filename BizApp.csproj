@@ -87,6 +87,9 @@
     <Compile Include="view\SettingsWindow.xaml.cs">
       <DependentUpon>SettingsWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="view\WorkerManagedPage.xaml.cs">
+      <DependentUpon>WorkerManagedPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="view\WorkerPoolPage.xaml.cs">
       <DependentUpon>WorkerPoolPage.xaml</DependentUpon>
     </Compile>
@@ -115,6 +118,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="view\SettingsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view\WorkerManagedPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

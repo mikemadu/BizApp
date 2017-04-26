@@ -22,11 +22,14 @@ namespace BizApp.view
     {
         NewApplicantPage newApplicantPage;
         WorkerPoolPage workerPoolPage;
+        WorkerManagedPage workerManagedPage;
+
         public DashboardPage()
         {
             InitializeComponent();
             newApplicantPage = new view.NewApplicantPage();
             workerPoolPage = new WorkerPoolPage();
+            workerManagedPage = new WorkerManagedPage();
 
         }
 
@@ -46,6 +49,16 @@ namespace BizApp.view
             if (workerPoolPage != null)
             {
                 this.NavigationService.Navigate(workerPoolPage);
+            }
+
+        }
+
+        private void managed_Click(object sender, RoutedEventArgs e)
+        {
+            //Applicant pool button clicked
+            if (workerManagedPage != null)
+            {
+                this.NavigationService.Navigate(workerManagedPage);
             }
 
         }
