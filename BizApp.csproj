@@ -70,6 +70,7 @@
     </ApplicationDefinition>
     <Compile Include="model\ApplicantModel.cs" />
     <Compile Include="model\LoginModel.cs" />
+    <Compile Include="model\SettingsModel.cs" />
     <Compile Include="viewmodel\LoginViewModel.cs" />
     <Compile Include="viewmodel\NewApplicantViewmodel.cs" />
     <Compile Include="viewmodel\ViewmodelBase.cs" />
@@ -82,6 +83,9 @@
     </Compile>
     <Compile Include="view\NewApplicantPage.xaml.cs">
       <DependentUpon>NewApplicantPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="view\SettingsWindow.xaml.cs">
+      <DependentUpon>SettingsWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="view\WorkerPoolPage.xaml.cs">
       <DependentUpon>WorkerPoolPage.xaml</DependentUpon>
@@ -107,6 +111,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="view\NewApplicantPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view\SettingsWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -7,5 +7,6 @@ namespace BizApp.model
 {
     class LoginModel
     {
+
     }
 }
