@@ -6,11 +6,23 @@
         xmlns:local="clr-namespace:BizApp.view"
         mc:Ignorable="d"
         Title="Settings" Height="300" Width="577.959" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" ShowInTaskbar="False">
-    <Grid Margin="0,0,2,0">
-        <Button Content="OK" HorizontalAlignment="Left" Margin="278,236,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
-        <Button Content="Cancel" HorizontalAlignment="Left" Margin="434,236,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
-        <CheckBox Content="CheckBox" HorizontalAlignment="Left" Margin="51,77,0,0" VerticalAlignment="Top"/>
-        <CheckBox Content="CheckBox" HorizontalAlignment="Left" Margin="51,130,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.279,-0.18"/>
+    <Grid Margin="0,0,2,0" Loaded="OnLoad">
+        <Button Content="OK" HorizontalAlignment="Left" Margin="289,236,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
+        <Button Content="Cancel" HorizontalAlignment="Left" Margin="465,236,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <TextBlock HorizontalAlignment="Left" Margin="50,25,0,0" TextWrapping="Wrap" Text="SETTINGS PAGE" VerticalAlignment="Top" Height="27" Width="100" Background="#FFF5EE57" FontWeight="Bold" FontSize="16" RenderTransformOrigin="0.5,0.5">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-13.633"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="51,78,0,0" TextWrapping="Wrap" Text="WHEN STARTING THIS APPLICATION " VerticalAlignment="Top" Foreground="#FF6A0606"/>
+        <Border BorderBrush="#FFEACDCD" BorderThickness="1" HorizontalAlignment="Left" Height="100" Margin="289,66,0,0" VerticalAlignment="Top" Width="251"/>
+        <RadioButton Content="Open to Dashboard Page" Checked="{Binding ToDashboard}" HorizontalAlignment="Left" Margin="51,101,0,0" VerticalAlignment="Top"/>
+        <RadioButton Content="Open to New Applicant Page" Checked="{Binding ToNewApplicant}" HorizontalAlignment="Left" Margin="51,133,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

@@ -7,14 +7,14 @@ using System.Xml.Serialization;
 
 namespace BizApp.model
 {
-    class SettingsModel
+   public class SettingsModel
     {
         [Serializable]
-       public class ProgramSettings
+       public class  ProgramSettings
         {
-          public string WindowName;
-          public  bool OpenWithPooling;
-          public  bool OpenWithOngoingProject;
+          public  string WindowName;
+          public  bool OpenToNewApplicant;
+          public  bool OpenToDashboard;
         }
 //=====================================================================================
         public static bool SaveSettings( ProgramSettings Setting)
@@ -40,9 +40,10 @@ namespace BizApp.model
         }
 
 //=======================================================================================
-/*
-        public static ProgramSettings ReadSettings(ProgramSettings Setting)
+
+        public static void ReadSettings(ref ProgramSettings Setting)
         {
+        
             try
             {
                 XmlSerializer de_serializer = new XmlSerializer(Setting.GetType());
@@ -52,27 +53,32 @@ namespace BizApp.model
 
                 //instruct serializer to deserialize an objectreference form the file and cast it to the
                 //appropriate reference type
-                ProgramSettings Setting = (ProgramSettings)de_serializer.Deserialize(oRead);
+                Setting = (ProgramSettings)de_serializer.Deserialize(oRead);
 
             oRead.Close();
+               
             }
             catch (Exception)
             {
 
-                CreateNewSettingsFile();
+                if (!CreateNewSettingsFile())
+                {
+                    //failure to create a new settings file give warning
+                    //TODO: Warning Message
+                }
             }
 
         }
-        */
+        
   //==============================================================================
-    private bool CreateNewSettingsFile()
+    private static bool CreateNewSettingsFile()
     {
            
             try
             { ProgramSettings prgSetting = new ProgramSettings();
             //Add some default values
-            prgSetting.OpenWithOngoingProject = true;
-            prgSetting.OpenWithPooling = false;
+            prgSetting.OpenToDashboard = true;
+            prgSetting.OpenToNewApplicant = false;
             //save it
             SaveSettings(prgSetting);
             return true;
