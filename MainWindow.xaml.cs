@@ -27,6 +27,6 @@ namespace BizApp
             _mainFrame.Navigate(loginPg);
         }
 
-       
+     
     }
 }

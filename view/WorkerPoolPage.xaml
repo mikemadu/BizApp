@@ -42,6 +42,16 @@
         <TextBlock HorizontalAlignment="Left" Height="23" Margin="10,226,0,0" TextWrapping="Wrap" Text="Last Name:" VerticalAlignment="Top" Width="78" FontWeight="Bold"/>
         <TextBlock HorizontalAlignment="Left" Height="23" Margin="10,256,0,0" TextWrapping="Wrap" Text="First Name:" VerticalAlignment="Top" Width="78" FontWeight="Bold"/>
         <TextBlock HorizontalAlignment="Left" Height="26" Margin="17,194,0,0" TextWrapping="Wrap" Text="SEARCH:" VerticalAlignment="Top" Width="89" Foreground="#FFE41919" FontWeight="Bold" FontSize="16" FontStyle="Italic"/>
-        <Button Content="UPDATE" HorizontalAlignment="Left" Margin="457,293,0,0" VerticalAlignment="Top" Width="104"/>
+        <Button Content="UPDATE" HorizontalAlignment="Left" Margin="427,280,0,0" VerticalAlignment="Top" Width="120" Height="33"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="427,27,0,0" TextWrapping="Wrap" Text="{Binding SelectedApplicant.Lastname, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="427,59,0,0" TextWrapping="Wrap" Text="{Binding SelectedApplicant.Firstname,  UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="427,96,0,0" TextWrapping="Wrap" Text="{Binding SelectedApplicant.MiddleName,  UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="427,134,0,0" TextWrapping="Wrap" Text="{Binding SelectedApplicant.Phone,  UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="427,173,0,0" TextWrapping="Wrap" Text="{Binding SelectedApplicant.Job,  UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Margin="344,29,0,0" TextWrapping="Wrap" Text="Last Name:" VerticalAlignment="Top" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" Margin="344,62,0,0" TextWrapping="Wrap" Text="First Name:" VerticalAlignment="Top" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" Margin="344,100,0,0" TextWrapping="Wrap" Text="Middle Name:" VerticalAlignment="Top" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" Margin="344,136,0,0" TextWrapping="Wrap" Text="Phone:" VerticalAlignment="Top" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" Margin="344,178,0,0" TextWrapping="Wrap" Text="Category:" VerticalAlignment="Top" FontWeight="Bold"/>
     </Grid>
 </Page>
