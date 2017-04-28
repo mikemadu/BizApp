@@ -26,40 +26,41 @@ namespace BizApp.view
 
         public DashboardPage()
         {
-            InitializeComponent();
-            newApplicantPage = new view.NewApplicantPage();
-            workerPoolPage = new WorkerPoolPage();
-            workerManagedPage = new WorkerManagedPage();
-
+            InitializeComponent();           
+           
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
             //New applicant button clicked
-            if(newApplicantPage != null)
+            if (App.applcntPage  == null)
             {
-                this.NavigationService.Navigate(newApplicantPage);
+                App.applcntPage = new NewApplicantPage();
             }
 
+                this.NavigationService.Navigate(App.applcntPage);
+          
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
             //Applicant pool button clicked
-            if (workerPoolPage != null)
+            if(App.workerPoolPage == null)
             {
-                this.NavigationService.Navigate(workerPoolPage);
+                App.workerPoolPage = new WorkerPoolPage();
             }
-
+          
+            this.NavigationService.Navigate(App.workerPoolPage);
         }
 
         private void managed_Click(object sender, RoutedEventArgs e)
         {
-            //Applicant pool button clicked
-            if (workerManagedPage != null)
+            //Managed Applicant pool button clicked
+            if (App.workerManagedPage == null)
             {
-                this.NavigationService.Navigate(workerManagedPage);
+                App.workerManagedPage = new WorkerManagedPage();
             }
+            this.NavigationService.Navigate(App.workerManagedPage);
 
         }
 

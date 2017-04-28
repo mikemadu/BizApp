@@ -28,10 +28,11 @@ namespace BizApp.view
 
         private void button_Click(object sender, RoutedEventArgs e)
 
-        {
+        {   //Login button clicked
+
             if (string.IsNullOrEmpty(txtUser.Text) || string.IsNullOrEmpty(TxtPass.Password))
             {
-                //TO DO: Message
+               
                 vm.MsgText = "Type anything to login :-)";
             }
             else
@@ -40,31 +41,14 @@ namespace BizApp.view
                 {
                     App.mainShell = new view.MainShell();
                 }
-                 
                     App.mainShell.Show();
                this.Close();
             }
+        }
 
-
-            // DashboardPage dashPage = new DashboardPage();
-            //  MainWindow main = new MainWindow();
-            //  main.Show(); 
-            /*
-              SettingsModel.ReadSettings(ref App.progSettings);
-
-            // read the config settings
-
-            if (App.progSettings.OpenToDashboard == true)
-            {
-
-            }
-            else
-            {
-
-            }
-            LoginPage loginPg = new LoginPage();
-            _mainFrame.Navigate(loginPg);
-             * */
+        private void On_Loaded(object sender, RoutedEventArgs e)
+        {
+            txtUser.Focus();
         }
     }
 }

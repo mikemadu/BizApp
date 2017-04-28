@@ -74,5 +74,16 @@ namespace BizApp.view
             }
             _mainFrame.Navigate(App.applcntPage);
         }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            //Managed Applicants
+            if (App.workerManagedPage == null)
+            {
+                App.workerManagedPage = new WorkerManagedPage();
+            }
+
+            this._mainFrame.Navigate(App.workerManagedPage);
+        }
     }
 }

@@ -25,6 +25,7 @@ namespace BizApp
        
         public static view.NewApplicantPage applcntPage = new view.NewApplicantPage();
         public static view.WorkerPoolPage workerPoolPage = new view.WorkerPoolPage();
+        public static view.WorkerManagedPage workerManagedPage = new view.WorkerManagedPage();
         public static view.DashboardPage dashboardPage = new view.DashboardPage();
         public static view.MainShell mainShell;
 

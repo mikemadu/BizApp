@@ -15,7 +15,7 @@
             <Button Content="Settings" Width="58" Margin="10,0,5,0" Click="Button_Click" />
             <Button Content="New Applicant" Width="92" Margin="0,0,5,0" Click="Button_Click_3" />
             <Button Content="Applicant Pool" Width="99" Margin="0,0,5,0" Click="Button_Click_2" />
-            <Button Content="Managed Applicant" Width="118" Margin="0,0,5,0" />
+            <Button Content="Managed Applicant" Width="118" Margin="0,0,5,0" Click="Button_Click_4" />
             <Button Content="Dashboard" Width="85" Margin="40,0,5,0" Click="Button_Click_1" />
 
         </StackPanel>
