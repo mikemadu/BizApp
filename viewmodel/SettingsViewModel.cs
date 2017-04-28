@@ -8,14 +8,9 @@ namespace BizApp.viewmodel
     public class SettingsViewModel: ViewmodelBase
 
     {
-        SettingsViewModel()
+       public SettingsViewModel()
         {
-            if (App.progSettings != null)
-            {
-                //load the settings into our controls
-                ToNewApplicant = App.progSettings.OpenToNewApplicant;
-                ToDashboard = App.progSettings.OpenToDashboard;
-            }
+            LoadSettings();
         }
 
         //================ Radio button for Dashboard ========
@@ -24,6 +19,7 @@ namespace BizApp.viewmodel
             get { return _toDash; }
 
             set { _toDash = value;
+                App.progSettings.OpenToDashboard = value;
                 NotifyPropertyChanged("ToDashboard");
             } }
 
@@ -33,8 +29,25 @@ namespace BizApp.viewmodel
 
             set {
                 _toApplicant = value;
+                App.progSettings.OpenToNewApplicant = value;
                 NotifyPropertyChanged("ToNewApplicant");
             }
+        }
+
+        public void LoadSettings()
+        {
+            if (App.progSettings != null)
+            {
+                //load the settings into our controls
+                ToNewApplicant = App.progSettings.OpenToNewApplicant;
+                ToDashboard = App.progSettings.OpenToDashboard;
+
+            }
+        }
+
+        public void  SaveSettings()
+        {
+            model.SettingsModel.SaveSettings( App.progSettings);
         }
     }
 }

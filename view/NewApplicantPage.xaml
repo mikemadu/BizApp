@@ -5,10 +5,42 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:BizApp.view"
       mc:Ignorable="d" 
-      d:DesignHeight="300" d:DesignWidth="300"
+      d:DesignHeight="350" d:DesignWidth="599"
       Title="NewApplicantPage">
 
     <Grid>
-        
+        <TextBlock HorizontalAlignment="Left" Margin="18,17,0,0"  Background="#FFF5EE57"  TextWrapping="Wrap" Text="ADD NEW APPLICANT" VerticalAlignment="Top" FontSize="16" Height="26" Width="169" RenderTransformOrigin="0.5,0.5" FontWeight="Bold">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-9.879"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="87,66,0,0" TextWrapping="Wrap" Text="{Binding NewApplicant.Lastname}" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="222,66,0,0" TextWrapping="Wrap" Text="{Binding NewApplicant.Firstname}" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="357,66,0,0" TextWrapping="Wrap" Text="{Binding NewApplicant.MiddleName}" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="222,121,0,0" TextWrapping="Wrap" Text="{Binding NewApplicant.Job}" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="357,121,0,0" TextWrapping="Wrap" Text="{Binding NewApplicant.Phone}" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Save" HorizontalAlignment="Left" Margin="357,167,0,0" VerticalAlignment="Top" Width="120" Height="28" FontSize="16" Background="#FFA2BCE2" FontWeight="Bold"/>
+        <DataGrid HorizontalAlignment="Left" Height="99" ItemsSource="{Binding NewApplicantCollection}" Margin="48,206,0,0" VerticalAlignment="Top" Width="486" RenderTransformOrigin="0.5,0.5">
+            <DataGrid.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="-1.123"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="-0.98"/>
+                </TransformGroup>
+            </DataGrid.RenderTransform>
+        </DataGrid>
+        <DatePicker HorizontalAlignment="Left" Margin="87,121,0,0" SelectedDate="{Binding NewApplicant.BirthDate}" VerticalAlignment="Top" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Margin="87,50,0,0" TextWrapping="Wrap" Text="Last Name:" VerticalAlignment="Top" FontWeight="Bold" FontStyle="Italic" FontSize="14"/>
+        <TextBlock HorizontalAlignment="Left" Margin="222,50,0,0" TextWrapping="Wrap" Text="First Name:" VerticalAlignment="Top" FontWeight="Bold" FontStyle="Italic" FontSize="14"/>
+        <TextBlock HorizontalAlignment="Left" Margin="356,50,0,0" TextWrapping="Wrap" Text="Middle Name:" VerticalAlignment="Top" FontWeight="Bold" FontStyle="Italic" FontSize="14"/>
+        <TextBlock HorizontalAlignment="Left" Margin="87,103,0,0" TextWrapping="Wrap" Text="Birth Date:" VerticalAlignment="Top" FontWeight="Bold" FontStyle="Italic" FontSize="14"/>
+        <TextBlock HorizontalAlignment="Left" Margin="223,103,0,0" TextWrapping="Wrap" Text="Category:" VerticalAlignment="Top" FontWeight="Bold" FontStyle="Italic" FontSize="14"/>
+        <TextBlock HorizontalAlignment="Left" Margin="359,103,0,0" TextWrapping="Wrap" Text="Phone:" VerticalAlignment="Top" FontWeight="Bold" FontStyle="Italic" FontSize="14"/>
     </Grid>
 </Page>

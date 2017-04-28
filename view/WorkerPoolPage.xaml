@@ -42,7 +42,7 @@
         <TextBlock HorizontalAlignment="Left" Height="23" Margin="10,226,0,0" TextWrapping="Wrap" Text="Last Name:" VerticalAlignment="Top" Width="78" FontWeight="Bold"/>
         <TextBlock HorizontalAlignment="Left" Height="23" Margin="10,256,0,0" TextWrapping="Wrap" Text="First Name:" VerticalAlignment="Top" Width="78" FontWeight="Bold"/>
         <TextBlock HorizontalAlignment="Left" Height="26" Margin="17,194,0,0" TextWrapping="Wrap" Text="SEARCH:" VerticalAlignment="Top" Width="89" Foreground="#FFE41919" FontWeight="Bold" FontSize="16" FontStyle="Italic"/>
-        <Button Content="UPDATE" HorizontalAlignment="Left" Margin="427,280,0,0" VerticalAlignment="Top" Width="120" Height="33"/>
+        <Button Content="UPDATE" HorizontalAlignment="Left" Margin="427,247,0,0" VerticalAlignment="Top" Width="120" Height="33"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="427,27,0,0" TextWrapping="Wrap" Text="{Binding SelectedApplicant.Lastname, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="427,59,0,0" TextWrapping="Wrap" Text="{Binding SelectedApplicant.Firstname,  UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="427,96,0,0" TextWrapping="Wrap" Text="{Binding SelectedApplicant.MiddleName,  UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120"/>

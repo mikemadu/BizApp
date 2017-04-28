@@ -79,14 +79,17 @@
     <Compile Include="view\DashboardPage.xaml.cs">
       <DependentUpon>DashboardPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="view\LoginPage.xaml.cs">
-      <DependentUpon>LoginPage.xaml</DependentUpon>
+    <Compile Include="view\LoginWindow.xaml.cs">
+      <DependentUpon>LoginWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="view\MainShell.xaml.cs">
+      <DependentUpon>MainShell.xaml</DependentUpon>
     </Compile>
     <Compile Include="view\NewApplicantPage.xaml.cs">
       <DependentUpon>NewApplicantPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="view\SettingsWindow.xaml.cs">
-      <DependentUpon>SettingsWindow.xaml</DependentUpon>
+    <Compile Include="view\SettingsView.xaml.cs">
+      <DependentUpon>SettingsView.xaml</DependentUpon>
     </Compile>
     <Compile Include="view\WorkerManagedPage.xaml.cs">
       <DependentUpon>WorkerManagedPage.xaml</DependentUpon>
@@ -110,7 +113,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="view\LoginPage.xaml">
+    <Page Include="view\LoginWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view\MainShell.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -118,7 +125,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="view\SettingsWindow.xaml">
+    <Page Include="view\SettingsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

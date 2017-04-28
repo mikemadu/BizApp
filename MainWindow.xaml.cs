@@ -11,6 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BizApp.model;
 using BizApp.view;
 
 namespace BizApp
@@ -23,8 +24,15 @@ namespace BizApp
         public MainWindow()
         {
             InitializeComponent();
- LoginPage loginPg = new LoginPage();
-            _mainFrame.Navigate(loginPg);
+            //load the settings
+            SettingsModel.ReadSettings(ref App.progSettings);
+
+            LoginWindow loginWnd = new LoginWindow();
+            loginWnd.ShowDialog();
+
+
+            this.Close();
+          
         }
 
      

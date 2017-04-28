@@ -24,7 +24,7 @@ namespace BizApp.model
             {
                
                 XmlSerializer srl = new XmlSerializer(Setting.GetType());
-                var objWriter = new StreamWriter("SettingsFile.txt");
+                var objWriter = new StreamWriter("SettingsFile.txt",false);
                 srl.Serialize(objWriter, Setting);
                 objWriter.Close();
                 return true;
@@ -51,7 +51,7 @@ namespace BizApp.model
             //create a streamreader that reads from the file on disk
             StreamReader oRead = new StreamReader("SettingsFile.txt");
 
-                //instruct serializer to deserialize an objectreference form the file and cast it to the
+                //instruct serializer to deserialize an object reference form the file and cast it to the
                 //appropriate reference type
                 Setting = (ProgramSettings)de_serializer.Deserialize(oRead);
 

@@ -1,13 +1,11 @@
-﻿<Page x:Class="BizApp.view.LoginPage"
-      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:BizApp.view"
-      mc:Ignorable="d" 
-      d:DesignHeight="400" d:DesignWidth="600"
-      Title="LoginPage">
-
+﻿<Window x:Class="BizApp.view.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BizApp.view"
+        mc:Ignorable="d"
+        Title="LoginWindow" Height="400" Width="600" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
         <Button x:Name="button" Content="Login" Margin="262,280,0,0" Click="button_Click" FontWeight="Bold" FontSize="16" Height="40" VerticalAlignment="Top" HorizontalAlignment="Left" Width="75"/>
         <TextBlock x:Name="textBlock" Margin="204,83,0,0" TextAlignment="Center" TextWrapping="Wrap" Text="BizAPP" FontSize="30" Foreground="#FF44B2CB" Background="#FFEAE0D7" HorizontalAlignment="Left" Width="202" Height="50" VerticalAlignment="Top"/>
@@ -17,4 +15,4 @@
         <TextBlock Height="21" Margin="277,224,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" HorizontalAlignment="Left" Width="67"/>
 
     </Grid>
-</Page>
+</Window>

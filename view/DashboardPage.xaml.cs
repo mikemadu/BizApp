@@ -66,7 +66,7 @@ namespace BizApp.view
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             //open the settings window
-            SettingsWindow settingsWindow = new SettingsWindow();
+            view.SettingsView settingsWindow = new SettingsView();
             settingsWindow.ShowDialog();
         }
     }

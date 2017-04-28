@@ -21,14 +21,12 @@ namespace BizApp
         private static ObservableCollection<Applicant> applicantCollection;// = new ObservableCollection<Applicant>();
 
         //make an instance of the settings class
-      public static  ProgramSettings progSettings = new ProgramSettings();
-
-               
-        // read the config settings
-      //  model.SettingsModel.SaveSettings();
-     
-
-       public static  view.LoginPage loginPage = new view.LoginPage();
+        public static  ProgramSettings progSettings = new ProgramSettings();
+       
+        public static view.NewApplicantPage applcntPage = new view.NewApplicantPage();
+        public static view.WorkerPoolPage workerPoolPage = new view.WorkerPoolPage();
+        public static view.DashboardPage dashboardPage = new view.DashboardPage();
+        public static view.MainShell mainShell;
 
         public static ObservableCollection<Applicant> ApplicantCollection { get => applicantCollection; set => applicantCollection = value; }
     }
