@@ -35,5 +35,9 @@ namespace BizApp.view
         {
 
         }
+        private void On_Loaded(object sender, RoutedEventArgs e)
+        {
+            vm.ReloadData();
+        }
     }
 }

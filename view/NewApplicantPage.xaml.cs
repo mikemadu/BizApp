@@ -19,9 +19,18 @@ namespace BizApp.view
     /// </summary>
     public partial class NewApplicantPage : Page
     {
+      viewmodel.NewApplicantViewmodel vm;
         public NewApplicantPage()
         {
             InitializeComponent();
+            vm = new viewmodel.NewApplicantViewmodel();
+            this.DataContext = vm;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            //Save button clicked
+            vm.SaveNewApplicant();
         }
     }
 }

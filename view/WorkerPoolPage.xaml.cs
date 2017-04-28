@@ -39,5 +39,10 @@ namespace BizApp.view
         { textBox_Copy.Clear();
 
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            vm.ReloadData();
+        }
     }
 }

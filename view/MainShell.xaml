@@ -12,11 +12,11 @@
             <RowDefinition Height="344*"/>
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal" Grid.Row="0">
-            <Button Content="Settings" Width="75" Margin="10,0,5,0" Click="Button_Click" />
-            <Button Content="New Applicant" Width="106" Margin="0,0,5,0" Click="Button_Click_3" />
-            <Button Content="Worker Pool" Width="75" Margin="0,0,5,0" Click="Button_Click_2" />
-            <Button Content="In-Progress" Width="75" Margin="0,0,5,0" />
-            <Button Content="Dashboard" Width="75" Margin="40,0,5,0" Click="Button_Click_1" />
+            <Button Content="Settings" Width="58" Margin="10,0,5,0" Click="Button_Click" />
+            <Button Content="New Applicant" Width="92" Margin="0,0,5,0" Click="Button_Click_3" />
+            <Button Content="Applicant Pool" Width="99" Margin="0,0,5,0" Click="Button_Click_2" />
+            <Button Content="Managed Applicant" Width="118" Margin="0,0,5,0" />
+            <Button Content="Dashboard" Width="85" Margin="40,0,5,0" Click="Button_Click_1" />
 
         </StackPanel>
         <Frame x:Name="_mainFrame"  Margin="0,10,0,0" Grid.Row="1"  />

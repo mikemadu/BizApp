@@ -5,7 +5,18 @@ using System.Text;
 
 namespace BizApp.viewmodel
 {
-    class LoginViewModel: ViewmodelBase
-    {
+    public class LoginViewModel: ViewmodelBase
+    {private string _msgText;
+        
+         public string MsgText {
+            get { return _msgText; }
+
+            set { _msgText = value;
+                NotifyPropertyChanged("MsgText");
+            }
+
+        }
     }
 }
+
+

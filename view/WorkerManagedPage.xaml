@@ -6,10 +6,10 @@
       xmlns:local="clr-namespace:BizApp.view"
       mc:Ignorable="d" 
       d:DesignHeight="347.883" d:DesignWidth="599"
-      Title="Managed Workers Page">
+      Title="Managed Workers Page" Loaded="On_Loaded">
 
     <Grid>
-        <DataGrid  SelectedItem="{Binding SelectedApplicant}"  ItemsSource="{Binding ApplicantList,UpdateSourceTrigger=PropertyChanged}" FrozenColumnCount="4"   DataGridCell.Selected="DataGrid_GotFocus"   Opacity="{Binding MainListOpacity}" 
+        <DataGrid  SelectedItem="{Binding SelectedApplicant}"  ItemsSource="{Binding ApplicantList, UpdateSourceTrigger=PropertyChanged}" FrozenColumnCount="4"   DataGridCell.Selected="DataGrid_GotFocus"   Opacity="{Binding MainListOpacity}" 
                   VirtualizingStackPanel.VirtualizationMode="Recycling"   
                   VirtualizingStackPanel.IsVirtualizing="True"
                   AutoGenerateColumns="False" Grid.Row="1"  CanUserDeleteRows="True" 

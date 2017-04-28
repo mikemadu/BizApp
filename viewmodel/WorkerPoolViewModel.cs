@@ -63,15 +63,19 @@ namespace BizApp.viewmodel
             //We get data from model and populate the list of applicants which is bound to
             //our listbox on the user interface
 
-            var applicantModel = new model.ApplicantModel();
-            ApplicantList = applicantModel.GetApplicantList();
+           //load Data
+                ReloadData();
 
-            CollectionView = CollectionViewSource.GetDefaultView(ApplicantList);
+            //var applicantModel = new model.ApplicantModel();
+            //ApplicantList = applicantModel.GetApplicantList();
 
 
-            App.ApplicantCollection = new ObservableCollection<Applicant>(ApplicantList);
+            //CollectionView = CollectionViewSource.GetDefaultView(ApplicantList);
 
-           
+
+            //App.ApplicantCollection = new ObservableCollection<Applicant>(ApplicantList);
+
+
 
 
         }
@@ -89,10 +93,29 @@ namespace BizApp.viewmodel
                 NotifyPropertyChanged("SelectedApplicant");
             }
         }
-            
+
+        #region ReloadData ==========================
+        public void ReloadData()
+        {
+            var applicantModel = new model.ApplicantModel();
+            ApplicantList = applicantModel.GetApplicantList();
+
+            if (App.ApplicantCollection!=null && App.ApplicantCollection.Count != 0)
+            {
+                foreach (Applicant ap in App.ApplicantCollection){
+                    this.ApplicantList.Add(ap);
+                }
+                //clear the global temporary cache
+              
+            }
+            App.ApplicantCollection = new ObservableCollection<Applicant>();
+            // make a collection view that we can search
+            CollectionView = CollectionViewSource.GetDefaultView(ApplicantList);
+        }
+        #endregion
 
         #region SEARCH ==========================
-      
+
         private string _lastname_s;
        public string Lastname_s {
             get {

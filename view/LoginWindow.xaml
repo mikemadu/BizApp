@@ -9,10 +9,11 @@
     <Grid>
         <Button x:Name="button" Content="Login" Margin="262,280,0,0" Click="button_Click" FontWeight="Bold" FontSize="16" Height="40" VerticalAlignment="Top" HorizontalAlignment="Left" Width="75"/>
         <TextBlock x:Name="textBlock" Margin="204,83,0,0" TextAlignment="Center" TextWrapping="Wrap" Text="BizAPP" FontSize="30" Foreground="#FF44B2CB" Background="#FFEAE0D7" HorizontalAlignment="Left" Width="202" Height="50" VerticalAlignment="Top"/>
-        <TextBox TextAlignment="Center" Margin="241,190,0,0" TextWrapping="Wrap" Text="{Binding Username}" Height="23" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120"/>
+        <TextBox x:Name="txtUser"  ToolTip="DEMO: Type in anything"  TextAlignment="Center" Margin="241,190,0,0" TextWrapping="Wrap" Text="{Binding Username}" Height="23" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120"/>
         <TextBlock Height="21" Margin="291,173,0,0" TextWrapping="Wrap" Text="User" VerticalAlignment="Top" HorizontalAlignment="Left" Width="67"/>
-        <TextBox TextAlignment="Center" Margin="241,238,0,0" TextWrapping="Wrap" Text="{Binding Password}" HorizontalAlignment="Left" Width="120" Height="23" VerticalAlignment="Top"/>
-        <TextBlock Height="21" Margin="277,224,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" HorizontalAlignment="Left" Width="67"/>
+        <TextBlock Height="21" Margin="277,228,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" HorizontalAlignment="Left" Width="67"/>
+        <PasswordBox x:Name="TxtPass" ToolTip="DEMO: Type in anything" HorizontalAlignment="Left" Margin="241,245,0,0" HorizontalContentAlignment="Center"  VerticalAlignment="Top" Width="120" Height="23"/>
+        <TextBlock HorizontalAlignment="Left" Margin="70,294,0,0" TextWrapping="Wrap" Text="{Binding MsgText}" VerticalAlignment="Top" Width="187" FontWeight="Bold" FontSize="14" Foreground="#FFC51212"/>
 
     </Grid>
 </Window>

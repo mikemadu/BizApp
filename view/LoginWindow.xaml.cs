@@ -17,29 +17,38 @@ namespace BizApp.view
     /// Interaction logic for LoginWindow.xaml
     /// </summary>
     public partial class LoginWindow : Window
-    {
+    { viewmodel.LoginViewModel vm;
+
         public LoginWindow()
         {
             InitializeComponent();
+            vm = new viewmodel.LoginViewModel();
+            this.DataContext = vm;
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
 
         {
-            if (App.mainShell != null) {
-                App.mainShell.Show();
+            if (string.IsNullOrEmpty(txtUser.Text) || string.IsNullOrEmpty(TxtPass.Password))
+            {
+                //TO DO: Message
+                vm.MsgText = "Type anything to login :-)";
             }
             else
             {
-                App.mainShell = new view.MainShell();
-                App.mainShell.Show();
+                if (App.mainShell == null)
+                {
+                    App.mainShell = new view.MainShell();
+                }
+                 
+                    App.mainShell.Show();
+               this.Close();
             }
-          
-            this.Close();
 
-           // DashboardPage dashPage = new DashboardPage();
-          //  MainWindow main = new MainWindow();
-          //  main.Show(); 
+
+            // DashboardPage dashPage = new DashboardPage();
+            //  MainWindow main = new MainWindow();
+            //  main.Show(); 
             /*
               SettingsModel.ReadSettings(ref App.progSettings);
 
