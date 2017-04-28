@@ -73,6 +73,7 @@
     <Compile Include="model\SettingsModel.cs" />
     <Compile Include="viewmodel\LoginViewModel.cs" />
     <Compile Include="viewmodel\NewApplicantViewmodel.cs" />
+    <Compile Include="viewmodel\SettingsViewModel.cs" />
     <Compile Include="viewmodel\ViewmodelBase.cs" />
     <Compile Include="viewmodel\WorkerPoolViewModel.cs" />
     <Compile Include="view\DashboardPage.xaml.cs">
