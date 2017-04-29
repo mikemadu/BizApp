@@ -30,12 +30,12 @@ namespace BizApp.view
 
         {   //Login button clicked
 
-            if (string.IsNullOrEmpty(txtUser.Text) || string.IsNullOrEmpty(TxtPass.Password))
+            if (vm.AuthenticateUser(txtUser.Text, TxtPass.Password ) == false)
             {
                
                 vm.MsgText = "Type anything to login :-)";
             }
-            else
+            else //if Authentication returns true proceed ....
             {
                 if (App.mainShell == null)
                 {

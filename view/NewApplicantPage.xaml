@@ -40,7 +40,7 @@
         <TextBlock HorizontalAlignment="Left" Margin="222,50,0,0" TextWrapping="Wrap" Text="First Name:" VerticalAlignment="Top" FontWeight="Bold" FontStyle="Italic" FontSize="14"/>
         <TextBlock HorizontalAlignment="Left" Margin="356,50,0,0" TextWrapping="Wrap" Text="Middle Name:" VerticalAlignment="Top" FontWeight="Bold" FontStyle="Italic" FontSize="14"/>
         <TextBlock HorizontalAlignment="Left" Margin="87,103,0,0" TextWrapping="Wrap" Text="Birth Date:" VerticalAlignment="Top" FontWeight="Bold" FontStyle="Italic" FontSize="14"/>
-        <TextBlock HorizontalAlignment="Left" Margin="223,103,0,0" TextWrapping="Wrap" Text="Category:" VerticalAlignment="Top" FontWeight="Bold" FontStyle="Italic" FontSize="14"/>
+        <TextBlock HorizontalAlignment="Left" Margin="223,103,0,0" TextWrapping="Wrap" Text="Job Category:" VerticalAlignment="Top" FontWeight="Bold" FontStyle="Italic" FontSize="14"/>
         <TextBlock HorizontalAlignment="Left" Margin="359,103,0,0" TextWrapping="Wrap" Text="Phone:" VerticalAlignment="Top" FontWeight="Bold" FontStyle="Italic" FontSize="14"/>
         <TextBlock HorizontalAlignment="Left" Margin="89,159,0,0" TextWrapping="Wrap" Text="Age:" VerticalAlignment="Top" FontWeight="Bold" FontSize="14" Foreground="#FFE411B4"/>
         <TextBlock HorizontalAlignment="Left" Margin="126,160,0,0" TextWrapping="Wrap" Text="{Binding Age}" VerticalAlignment="Top" FontWeight="Bold" FontSize="14" Foreground="#FFE411B4"/>

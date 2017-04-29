@@ -14,7 +14,13 @@ namespace BizApp.viewmodel
             set { _msgText = value;
                 NotifyPropertyChanged("MsgText");
             }
+        }
 
+        public bool AuthenticateUser(string Username, string Password)
+        { 
+            //call our authentication service residing in our LoginModel
+           return model.LoginModel.AuthenticateUser(Username, Password);
+            
         }
     }
 }
