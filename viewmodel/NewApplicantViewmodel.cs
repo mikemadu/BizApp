@@ -25,20 +25,7 @@ namespace BizApp.viewmodel
             set
             {
                 _applicant = value;
-                //Verify the that the following properties of NewApplicant are filled
-             /*   if (string.IsNullOrEmpty(NewApplicant.Lastname) ||
-                    string.IsNullOrEmpty(NewApplicant.Firstname) ||
-                    string.IsNullOrEmpty(NewApplicant.Job) ||
-                    string.IsNullOrEmpty(NewApplicant.Phone))
-                {
-                    EnableSave = false; //If even one is not filled, don't enable the SAVE button
-                }
-                else
-                {
-                    EnableSave = true; // else enable the SAVE button
-                }*/
-               //TODO: Compute the age
-
+              
                 NotifyPropertyChanged("NewApplicant");//notify the binding engine that the NewApplicant property has changed.
             }
         }
@@ -180,7 +167,7 @@ namespace BizApp.viewmodel
             MiddleName = "";
             Job = "";
             Phone = "";
-            BirthDate = DateTime.Now.Date;
+            BirthDate =  DateTime.Now.Date;
 
         }
         /// <summary>

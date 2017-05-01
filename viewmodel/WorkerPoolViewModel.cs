@@ -56,29 +56,15 @@ namespace BizApp.viewmodel
             }
         }
 
-
-
         //============== Class Constructor ======================================
         public WorkerPoolViewModel() {
-            //We get data from model and populate the list of applicants which is bound to
+            //We get data from the model and populate the list of applicants which is bound to
             //our listbox on the user interface
 
            //load Data
-                ReloadData();
+                LoadData();
 
-            //var applicantModel = new model.ApplicantModel();
-            //ApplicantList = applicantModel.GetApplicantList();
-
-
-            //CollectionView = CollectionViewSource.GetDefaultView(ApplicantList);
-
-
-            //App.ApplicantCollection = new ObservableCollection<Applicant>(ApplicantList);
-
-
-
-
-        }
+          }
         //==================================================================
         private Applicant _applicant;
         public Applicant SelectedApplicant
@@ -94,11 +80,14 @@ namespace BizApp.viewmodel
             }
         }
 
-        #region ReloadData ==========================
-        public void ReloadData()
+        #region LoadData ==========================
+        public void LoadData()
         {
-            var applicantModel = new model.ApplicantModel();
-            ApplicantList = applicantModel.GetApplicantList();
+           
+          // var DataAccess = new model.DataAccess();
+            ApplicantList = App.DataAccess.GetApplicants();
+         
+
 
             if (App.ApplicantCollection!=null && App.ApplicantCollection.Count != 0)
             {

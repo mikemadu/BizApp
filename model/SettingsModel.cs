@@ -18,12 +18,10 @@ namespace BizApp.model
         }
 //=====================================================================================
         public static bool SaveSettings( ProgramSettings Setting)
-
         {
             try
             {
-               
-                XmlSerializer srl = new XmlSerializer(Setting.GetType());
+                 XmlSerializer srl = new XmlSerializer(Setting.GetType());
                 var objWriter = new StreamWriter("SettingsFile.txt",false);
                 srl.Serialize(objWriter, Setting);
                 objWriter.Close();
@@ -32,9 +30,7 @@ namespace BizApp.model
             }
             catch (Exception)
             {
-                
-                return false;
-
+               return false;
             }
 
         }
@@ -72,24 +68,24 @@ namespace BizApp.model
         
   //==============================================================================
     private static bool CreateNewSettingsFile()
-    {
-           
+        {
             try
-            { ProgramSettings prgSetting = new ProgramSettings();
-            //Add some default values
-            prgSetting.OpenToDashboard = true;
-            prgSetting.OpenToNewApplicant = false;
-            //save it
-            SaveSettings(prgSetting);
-            return true;
+            {
+                ProgramSettings prgSetting = new ProgramSettings();
+                //Add some default values
+                prgSetting.OpenToDashboard = true;
+                prgSetting.OpenToNewApplicant = false;
+                //save it
+                SaveSettings(prgSetting);
+                return true;
 
             }
             catch (Exception)
             {
                 return false;
             }
+        }
+
     }
-       
-    }
-  
+
 }

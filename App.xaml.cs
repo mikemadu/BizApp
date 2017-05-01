@@ -8,6 +8,7 @@ using System.Windows;
 using BizApp.model;
 using static BizApp.model.ApplicantModel;
 using static BizApp.model.SettingsModel;
+using static BizApp.model.UserModel;
 
 namespace BizApp
 {
@@ -19,6 +20,9 @@ namespace BizApp
     { //Declare an observable list of Applicants. We will use this later to populate our applicants for binding to the UI
 
         private static ObservableCollection<Applicant> applicantCollection;// = new ObservableCollection<Applicant>();
+        public List<User> UserList;
+
+        public static DataAccess DataAccess = new model.DataAccess();
 
         //make an instance of the settings class
         public static  ProgramSettings progSettings = new ProgramSettings();

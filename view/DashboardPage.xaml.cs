@@ -20,10 +20,7 @@ namespace BizApp.view
     public partial class DashboardPage : Page
         
     {
-        NewApplicantPage newApplicantPage;
-        WorkerPoolPage workerPoolPage;
-        WorkerManagedPage workerManagedPage;
-
+       
         public DashboardPage()
         {
             InitializeComponent();           
@@ -39,8 +36,7 @@ namespace BizApp.view
             }
 
                 this.NavigationService.Navigate(App.applcntPage);
-          
-        }
+         }
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {

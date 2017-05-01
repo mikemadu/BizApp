@@ -69,8 +69,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="model\ApplicantModel.cs" />
+    <Compile Include="model\DataAccess.cs" />
     <Compile Include="model\LoginModel.cs" />
     <Compile Include="model\SettingsModel.cs" />
+    <Compile Include="model\UserModel.cs" />
     <Compile Include="viewmodel\LoginViewModel.cs" />
     <Compile Include="viewmodel\NewApplicantViewmodel.cs" />
     <Compile Include="viewmodel\SettingsViewModel.cs" />
