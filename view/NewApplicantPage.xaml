@@ -19,11 +19,11 @@
                 </TransformGroup>
             </TextBlock.RenderTransform>
         </TextBlock>
-        <TextBox HorizontalAlignment="Left" CharacterCasing="Upper" Height="23" Margin="87,66,0,0" TextWrapping="Wrap" Text="{Binding NewApplicant.Lastname, UpdateSourceTrigger=PropertyChanged }" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" CharacterCasing="Normal" Height="23" Margin="222,66,0,0" TextWrapping="Wrap" Text="{Binding NewApplicant.Firstname, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="357,66,0,0" TextWrapping="Wrap" Text="{Binding NewApplicant.MiddleName, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="222,121,0,0" TextWrapping="Wrap" Text="{Binding NewApplicant.Job, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="357,121,0,0" TextWrapping="Wrap" Text="{Binding NewApplicant.Phone, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" CharacterCasing="Upper" Height="23" Margin="87,66,0,0" TextWrapping="Wrap" Text="{Binding Lastname, UpdateSourceTrigger=PropertyChanged }" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" CharacterCasing="Normal" Height="23" Margin="222,66,0,0" TextWrapping="Wrap" Text="{Binding Firstname, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="357,66,0,0" TextWrapping="Wrap" Text="{Binding MiddleName, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="222,121,0,0" TextWrapping="Wrap" Text="{Binding Job, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="357,121,0,0" TextWrapping="Wrap" Text="{Binding Phone, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120"/>
         <Button Content="Save" HorizontalAlignment="Left" IsEnabled="{Binding EnableSave}" Margin="357,167,0,0" VerticalAlignment="Top" Width="120" Height="28" FontSize="16" Background="#FFA2BCE2" FontWeight="Bold" Click="Button_Click"/>
         <DataGrid HorizontalAlignment="Left" Height="99" ItemsSource="{Binding NewApplicantCollection}" Margin="48,206,0,0" VerticalAlignment="Top" Width="486" RenderTransformOrigin="0.5,0.5">
             <DataGrid.RenderTransform>
@@ -35,7 +35,7 @@
                 </TransformGroup>
             </DataGrid.RenderTransform>
         </DataGrid>
-        <DatePicker HorizontalAlignment="Left" Margin="87,121,0,0" SelectedDate="{Binding NewApplicant.BirthDate, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120" DisplayDateStart="1950-01-01"/>
+        <DatePicker HorizontalAlignment="Left" Margin="87,121,0,0" SelectedDate="{Binding BirthDate, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120" DisplayDateStart="1950-01-01"/>
         <TextBlock HorizontalAlignment="Left" Margin="87,50,0,0" TextWrapping="Wrap" Text="Last Name:" VerticalAlignment="Top" FontWeight="Bold" FontStyle="Italic" FontSize="14"/>
         <TextBlock HorizontalAlignment="Left" Margin="222,50,0,0" TextWrapping="Wrap" Text="First Name:" VerticalAlignment="Top" FontWeight="Bold" FontStyle="Italic" FontSize="14"/>
         <TextBlock HorizontalAlignment="Left" Margin="356,50,0,0" TextWrapping="Wrap" Text="Middle Name:" VerticalAlignment="Top" FontWeight="Bold" FontStyle="Italic" FontSize="14"/>

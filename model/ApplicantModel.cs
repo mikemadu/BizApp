@@ -21,6 +21,7 @@ namespace BizApp.model
             app.Phone = "926800876";
             app.Job = "Electronics Engineer";
             app.id = 1;
+            app.key = Guid.NewGuid();
             lst.Add(app);//add to the list
 
             app = new Applicant();//make a new applicant and populate the properties
@@ -31,6 +32,7 @@ namespace BizApp.model
             app.Phone = "927453789";
             app.Job = "Mechanical Engineer";
             app.id = 2;
+            app.key = Guid.NewGuid();
             lst.Add(app);//add to the list
 
             app = new Applicant();//make a new applicant and populate the properties
@@ -41,6 +43,7 @@ namespace BizApp.model
             app.Phone = "933008877";
             app.Job = "Accountant";
             app.id = 3;
+            app.key = Guid.NewGuid();
             lst.Add(app);//add to the list
 
             app = new Applicant();//make a new applicant and populate the properties
@@ -51,6 +54,7 @@ namespace BizApp.model
             app.Phone = "09725447863";
             app.Job = "Store Keeper";
             app.id = 4;
+            app.key = Guid.NewGuid();
             lst.Add(app);//add to the list
 
             return lst;
@@ -64,6 +68,7 @@ namespace BizApp.model
             public string Job { get; set; }
             public DateTime BirthDate { get; set; }
             public int id { get; set; }
+            public Guid key { get; set; }
 
         }
     }
