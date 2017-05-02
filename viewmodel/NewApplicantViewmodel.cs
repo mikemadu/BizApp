@@ -51,10 +51,14 @@ namespace BizApp.viewmodel
            
                 EnableSave = true;
                  if (NewApplicant != null)
-            {   //generate a unique key. this key can be used to search for this applicant
+            {   //Generate a unique key. This key can be used to search for this applicant. In a normal app, our database will do this.
                 NewApplicant.key = Guid.NewGuid();
                 NewApplicantCollection.Add(NewApplicant);//Add to our local collection that is bound to the datagrid in this view
+
                 App.ApplicantCollection.Add(NewApplicant);//Add also to our global store. In a normal App, we can push to a database.
+                //push it into the Store simulating our database. This store is initialized in App class
+                App.DataAccess.CreateApplicant(NewApplicant);
+
                 NewApplicant = new model.ApplicantModel.Applicant();
                 ClearEntries();
             }

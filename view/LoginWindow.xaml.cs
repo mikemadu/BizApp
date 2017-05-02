@@ -33,7 +33,7 @@ namespace BizApp.view
             if (vm.AuthenticateUser(txtUser.Text, TxtPass.Password ) == false)
             {
                
-                vm.MsgText = "Type anything to login :-)";
+                vm.MsgText = "Type any password to login :-)";
             }
             else //if Authentication returns true proceed ....
             {

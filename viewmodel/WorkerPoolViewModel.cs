@@ -13,18 +13,55 @@ namespace BizApp.viewmodel
     public class WorkerPoolViewModel : ViewmodelBase
 
     {
+
+
+        //============== Class Constructor ======================================
+        public WorkerPoolViewModel()
+        {
+            //We get data from the model and populate the list of applicants which is bound to
+            //our listbox on the user interface
+           
+            LoadData();
+
+        }
+        //=======================================================================
+
+        #region LoadData ==========================
+        public void LoadData()
+        {
+
+            // var DataAccess = new model.DataAccess();
+            ApplicantList = App.DataAccess.GetApplicants();
+
+            App.ApplicantCollection = new ObservableCollection<Applicant>();
+            // make a collection view that we can search
+            CollectionView = CollectionViewSource.GetDefaultView(ApplicantList);
+        }
+        #endregion
+
+
+
+
+        //=======================================================================
+        /// <summary>
+        /// Properties used by this class
+        /// </summary>
+        /// 
         List<Applicant> _appList;
         public List<Applicant> ApplicantList //property of this class
-        { get {
+        {
+            get
+            {
                 return _appList;
             }
 
-            set {
+            set
+            {
                 _appList = value;
                 NotifyPropertyChanged("ApplicantList");
             }
         }
-        //=======================================================================
+
         ICollectionView _collectionView;
         public ICollectionView CollectionView// The Collection View as a property of this class 
                                                 //so that it can be bound to the UI ListBox
@@ -56,15 +93,6 @@ namespace BizApp.viewmodel
             }
         }
 
-        //============== Class Constructor ======================================
-        public WorkerPoolViewModel() {
-            //We get data from the model and populate the list of applicants which is bound to
-            //our listbox on the user interface
-
-           //load Data
-                LoadData();
-
-          }
         //==================================================================
         private Applicant _applicant;
         public Applicant SelectedApplicant
@@ -79,31 +107,13 @@ namespace BizApp.viewmodel
                 NotifyPropertyChanged("SelectedApplicant");
             }
         }
-
-        #region LoadData ==========================
-        public void LoadData()
-        {
-           
-          // var DataAccess = new model.DataAccess();
-            ApplicantList = App.DataAccess.GetApplicants();
-         
-
-
-            if (App.ApplicantCollection!=null && App.ApplicantCollection.Count != 0)
-            {
-                foreach (Applicant ap in App.ApplicantCollection){
-                    this.ApplicantList.Add(ap);
-                }
-                //clear the global temporary cache
-              
-            }
-            App.ApplicantCollection = new ObservableCollection<Applicant>();
-            // make a collection view that we can search
-            CollectionView = CollectionViewSource.GetDefaultView(ApplicantList);
-        }
-        #endregion
+        //=============== end properties ================
+ 
 
         #region SEARCH ==========================
+        /// <summary>
+        /// Searching Last names
+        /// </summary>
 
         private string _lastname_s;
        public string Lastname_s {
@@ -170,6 +180,9 @@ namespace BizApp.viewmodel
         }
 
         //============================================================================
+        /// <summary>
+        /// Searching First names
+        /// </summary>
         private string _firstname_s;
         public string Firstname_s
         {

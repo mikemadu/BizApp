@@ -6,14 +6,26 @@
         xmlns:local="clr-namespace:BizApp.view"
         mc:Ignorable="d"
         Title="LoginWindow" Height="400" Width="600" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Loaded="On_Loaded">
+    <Window.Resources>
+        <DataTemplate x:Key="ListboxTemplate">
+            <StackPanel Margin="3">
+                <DockPanel >
+                    <TextBlock Text="{Binding Username}" Foreground="Green" FontWeight="Bold" />
+                </DockPanel>
+            </StackPanel>
+        </DataTemplate>
+    </Window.Resources>
     <Grid>
-        <Button x:Name="button" Content="Login" Margin="262,280,0,0" Click="button_Click" ToolTip="This is a Demo. Type in anything above to login" FontWeight="Bold" FontSize="16" Height="40" VerticalAlignment="Top" HorizontalAlignment="Left" Width="75"/>
-        <TextBlock x:Name="textBlock" Margin="204,83,0,0" TextAlignment="Center" TextWrapping="Wrap" Text="BizAPP" FontSize="30" Foreground="#FF44B2CB" Background="#FFEAE0D7" HorizontalAlignment="Left" Width="202" Height="50" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtUser"  ToolTip="DEMO: Type in anything"  TextAlignment="Center" Margin="241,190,0,0" TextWrapping="Wrap" Text="{Binding Username}" Height="23" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120"/>
+        <Button x:Name="button" Content="Login" Margin="241,290,0,0" Click="button_Click" IsEnabled="{Binding CanLogin}" ToolTip="This is a Demo. Select a name and type any password to login" FontWeight="Bold" FontSize="16" Height="40" VerticalAlignment="Top" HorizontalAlignment="Left" Width="117"/>
+        <TextBlock x:Name="textBlock" Margin="200,36,0,0" TextAlignment="Center" TextWrapping="Wrap" Text="BizAPP" FontSize="30" Foreground="#FF44B2CB" Background="#FFEAE0D7" HorizontalAlignment="Left" Width="202" Height="50" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtUser"   TextAlignment="Center" Margin="241,190,0,0" TextWrapping="Wrap" IsReadOnly="True"  Text="{Binding SelectedUser.Username}" Height="23" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120"/>
         <TextBlock Height="21" Margin="291,173,0,0" TextWrapping="Wrap" Text="User" VerticalAlignment="Top" HorizontalAlignment="Left" Width="67"/>
         <TextBlock Height="21" Margin="277,228,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" HorizontalAlignment="Left" Width="67"/>
         <PasswordBox x:Name="TxtPass" ToolTip="DEMO: Type in anything" HorizontalAlignment="Left" Margin="241,245,0,0" HorizontalContentAlignment="Center"  VerticalAlignment="Top" Width="120" Height="23"/>
-        <TextBlock HorizontalAlignment="Left" Margin="70,294,0,0" TextWrapping="Wrap" Text="{Binding MsgText}" VerticalAlignment="Top" Width="187" FontWeight="Bold" FontSize="14" Foreground="#FFC51212"/>
+        <TextBlock HorizontalAlignment="Left" Margin="397,190,0,0" TextWrapping="Wrap" Text="{Binding MsgText}" VerticalAlignment="Top" Width="187" FontWeight="Bold" FontSize="14" Foreground="#FFC51212" Height="78"/>
+        <ListBox ItemTemplate="{StaticResource ListboxTemplate}" HorizontalAlignment="Left" Height="226" Margin="62,106,0,0" VerticalAlignment="Top" Width="136" ItemsSource="{Binding UserList}" SelectedItem="{Binding SelectedUser}"/>
+        <TextBlock HorizontalAlignment="Left" TextAlignment="Center" Margin="235,118,0,0" TextWrapping="Wrap" Text="{Binding SelectedUser.Username}" VerticalAlignment="Top" Width="133" Height="31" FontWeight="Bold" FontSize="18" Foreground="#FFCB1919"/>
+        <TextBlock HorizontalAlignment="Left" Margin="70,86,0,0" TextWrapping="Wrap" Text="List of Users" FontStyle="Italic" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>
