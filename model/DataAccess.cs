@@ -76,8 +76,49 @@ namespace BizApp.model
 
         {
             //read from disk
-            ReadApplicants(ref ApplicantStore.ApplicantList , "applicant_store");
+            ReadApplicants(ref ApplicantStore.ApplicantList , "applicant_store.txt");
             return ApplicantStore.ApplicantList; //return list to caller
+        }
+
+        public List<Applicant> UpdateApplicant(Applicant applicant)
+        {
+            //find the applicant
+            if(ApplicantStore.ApplicantList != null)
+            {
+                var oneApplicant = (from a in ApplicantStore.ApplicantList where a.key.Equals(applicant.key) select a).FirstOrDefault();
+                if (oneApplicant != null)
+                {
+                    oneApplicant.Lastname = applicant.Lastname;
+                    oneApplicant.Firstname = applicant.Firstname;
+                    oneApplicant.MiddleName = applicant.MiddleName;
+
+                    //save the whole collection to disk
+                    WriteApplicants(ref ApplicantStore.ApplicantList, "applicant_store.txt");
+
+                }
+                return ApplicantStore.ApplicantList;
+            }else
+            return null;
+
+        }
+
+        public List<Applicant> DeleteApplicant(Guid applKey)
+        {
+            //find the applicant
+            if (ApplicantStore.ApplicantList != null)
+            {
+                var oneApplicant = (from a in ApplicantStore.ApplicantList where a.key.Equals(applKey) select a).FirstOrDefault();
+                if (oneApplicant != null)
+                {
+                    ApplicantStore.ApplicantList.Remove(oneApplicant);
+
+                    //save the whole collection to disk
+                    WriteApplicants(ref ApplicantStore.ApplicantList, "applicant_store.txt");
+
+                }
+                return ApplicantStore.ApplicantList;
+            }else
+            return null;
         }
 
         public Applicant GetApplicantByKey(string key)

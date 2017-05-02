@@ -42,17 +42,18 @@
         <TextBlock HorizontalAlignment="Left" Height="23" Margin="10,228,0,0" TextWrapping="Wrap" Text="Last Name:" VerticalAlignment="Top" Width="78" FontWeight="Bold"/>
         <TextBlock HorizontalAlignment="Left" Height="23" Margin="10,258,0,0" TextWrapping="Wrap" Text="First Name:" VerticalAlignment="Top" Width="78" FontWeight="Bold"/>
         <TextBlock HorizontalAlignment="Left" Height="26" Margin="17,196,0,0" TextWrapping="Wrap" Text="SEARCH:" VerticalAlignment="Top" Width="89" Foreground="#FFE41919" FontWeight="Bold" FontSize="16" FontStyle="Italic"/>
-        <Button Content="UPDATE" HorizontalAlignment="Left" Margin="427,247,0,0" VerticalAlignment="Top" Width="120" Height="33"/>
+        <Button Content="UPDATE" HorizontalAlignment="Left" IsEnabled="{Binding CanUpdate}" Margin="427,247,0,0" VerticalAlignment="Top" Width="120" Height="33" Click="Button_Click_2"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="427,27,0,0" TextWrapping="Wrap" Text="{Binding SelectedApplicant.Lastname, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="427,59,0,0" TextWrapping="Wrap" Text="{Binding SelectedApplicant.Firstname,  UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="427,96,0,0" TextWrapping="Wrap" Text="{Binding SelectedApplicant.MiddleName,  UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="427,134,0,0" TextWrapping="Wrap" Text="{Binding SelectedApplicant.Phone,  UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="427,173,0,0" TextWrapping="Wrap" Text="{Binding SelectedApplicant.Job,  UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="427,93,0,0" TextWrapping="Wrap" Text="{Binding SelectedApplicant.MiddleName,  UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="427,127,0,0" TextWrapping="Wrap" Text="{Binding SelectedApplicant.Phone,  UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="427,160,0,0" TextWrapping="Wrap" Text="{Binding SelectedApplicant.Job,  UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120"/>
         <TextBlock HorizontalAlignment="Left" Margin="344,29,0,0" TextWrapping="Wrap" Text="Last Name:" VerticalAlignment="Top" FontWeight="Bold"/>
         <TextBlock HorizontalAlignment="Left" Margin="344,62,0,0" TextWrapping="Wrap" Text="First Name:" VerticalAlignment="Top" FontWeight="Bold"/>
-        <TextBlock HorizontalAlignment="Left" Margin="344,100,0,0" TextWrapping="Wrap" Text="Middle Name:" VerticalAlignment="Top" FontWeight="Bold"/>
-        <TextBlock HorizontalAlignment="Left" Margin="344,136,0,0" TextWrapping="Wrap" Text="Phone:" VerticalAlignment="Top" FontWeight="Bold"/>
-        <TextBlock HorizontalAlignment="Left" Margin="344,178,0,0" TextWrapping="Wrap" Text="Category:" VerticalAlignment="Top" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" Margin="344,97,0,0" TextWrapping="Wrap" Text="Middle Name:" VerticalAlignment="Top" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" Margin="344,129,0,0" TextWrapping="Wrap" Text="Phone:" VerticalAlignment="Top" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" Margin="344,165,0,0" TextWrapping="Wrap" Text="Category:" VerticalAlignment="Top" FontWeight="Bold"/>
         <Button Content="Refresh Data" HorizontalAlignment="Left" Margin="303,248,0,0" VerticalAlignment="Top" Width="96" Height="32" Background="#FFD8FBBF" Click="Button_Click"/>
+        <Button Content="Delete" IsEnabled="{Binding CanDelete}" HorizontalAlignment="Left" Margin="227,183,0,0" VerticalAlignment="Top" Width="75" Height="21" Background="#FFFBCBCB" Click="Button_Click_1"/>
     </Grid>
 </Page>

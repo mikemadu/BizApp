@@ -24,7 +24,7 @@ namespace BizApp.view
         public WorkerPoolPage()
         {
             InitializeComponent();
-            vm = new viewmodel.WorkerPoolViewModel();
+            vm = new WorkerPoolViewModel();
             this.DataContext = vm;
         }
 
@@ -36,13 +36,30 @@ namespace BizApp.view
         }
 
         private void On_LastName_Focused(object sender, RoutedEventArgs e)
-        { textBox_Copy.Clear();
+        {
+            textBox_Copy.Clear();
 
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            //reload data
             vm.LoadData();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+             //delete selected applicant
+                vm.DeleteApplicant();
+            
+           
+           
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            //Update selected applicant
+            vm.UpdateApplicant();
         }
     }
 }

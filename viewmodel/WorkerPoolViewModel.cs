@@ -7,6 +7,7 @@ using System.Windows.Data;
 using static BizApp.model.ApplicantModel;
 using System.ComponentModel;
 using System.Windows.Media;
+using System.Windows; // so we can use the MessageBox
 
 namespace BizApp.viewmodel
 {
@@ -17,29 +18,62 @@ namespace BizApp.viewmodel
 
         //============== Class Constructor ======================================
         public WorkerPoolViewModel()
-        {
+        {   //we do initialization here
+            _canUpdate = false;//Disable the update button
+            _canDelete = false;// and Delete buttons until an applicant is chosen.
+
             //We get data from the model and populate the list of applicants which is bound to
             //our listbox on the user interface
-           
             LoadData();
 
         }
-        //=======================================================================
-
+       
         #region LoadData ==========================
         public void LoadData()
         {
-
-            // var DataAccess = new model.DataAccess();
             ApplicantList = App.DataAccess.GetApplicants();
 
             App.ApplicantCollection = new ObservableCollection<Applicant>();
             // make a collection view that we can search
             CollectionView = CollectionViewSource.GetDefaultView(ApplicantList);
+            //We should clear the selected applicant
+            SelectedApplicant = null;
         }
         #endregion
 
+       public void DeleteApplicant()
+        {
+            //We can delete an applicant only while they are selected
+            if (SelectedApplicant != null)
+            {
+                StringBuilder sb = new StringBuilder();
+                sb.Append("Are You Sure You Want to delete this applicant, ");
+                sb.Append(SelectedApplicant.Firstname);
+                sb.Append(" ");
+                sb.Append(SelectedApplicant.Lastname);
+                sb.Append("?");
+                
+                if (MessageBox.Show(sb.ToString(), "Confirm Delete", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+                {
+                    //call the DataAccess layer for the deletion
+                App.DataAccess.DeleteApplicant(SelectedApplicant.key);
+                //clear the selected applicant from the user interface
+                SelectedApplicant = null;
+                }     
+            }
 
+        }
+
+        public void UpdateApplicant()
+        {
+            //We can only update an applicant while they are selected
+            if (SelectedApplicant != null)
+            {
+                //call the DataAccess layer for the update
+                App.DataAccess.UpdateApplicant(SelectedApplicant);
+                SelectedApplicant = null;
+            }
+        }
 
 
         //=======================================================================
@@ -62,10 +96,31 @@ namespace BizApp.viewmodel
             }
         }
 
+        private bool _canDelete;
+
+        public bool CanDelete
+        {
+            get { return _canDelete; }
+            set { _canDelete = value;
+                NotifyPropertyChanged("CanDelete");
+            }
+        }
+
+        private bool _canUpdate;
+        public bool CanUpdate
+        {
+            get { return _canUpdate; }
+            set
+            {
+                _canUpdate = value;
+                NotifyPropertyChanged("CanUpdate");
+            }
+        }
+
         ICollectionView _collectionView;
         public ICollectionView CollectionView// The Collection View as a property of this class 
                                                 //so that it can be bound to the UI ListBox
-        { get => _collectionView;
+        { get { return _collectionView; }
 
             set { _collectionView = value;
                 NotifyPropertyChanged("CollectionView"); }
@@ -92,7 +147,6 @@ namespace BizApp.viewmodel
                 NotifyPropertyChanged("SearchColor_LastName");
             }
         }
-
         //==================================================================
         private Applicant _applicant;
         public Applicant SelectedApplicant
@@ -104,6 +158,16 @@ namespace BizApp.viewmodel
             set
             {
                 _applicant = value;
+                if (value != null)
+                {
+                    CanDelete = true;
+                    CanUpdate = true;
+                }
+                else
+                {
+                    CanDelete = false;
+                    CanUpdate = false;
+                }
                 NotifyPropertyChanged("SelectedApplicant");
             }
         }
@@ -228,7 +292,6 @@ namespace BizApp.viewmodel
         {
             try
             {
-
                 Applicant app1 = ap as Applicant;
                 if (app1.Firstname == null)
                 {
@@ -251,10 +314,7 @@ namespace BizApp.viewmodel
 
     }
     
-  
-
-   
-        #endregion
+   #endregion
 
 
     }

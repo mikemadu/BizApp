@@ -34,6 +34,10 @@ namespace BizApp.view
                 {
                     _mainFrame.Navigate(App.applcntPage);
                 }
+                else
+                {//or default to the dashboard page if nothing has been chosen yet 
+                    _mainFrame.Navigate(App.dashboardPage);
+                }
             }
 
         }

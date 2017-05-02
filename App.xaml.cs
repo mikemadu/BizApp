@@ -33,6 +33,6 @@ namespace BizApp
         public static view.DashboardPage dashboardPage = new view.DashboardPage();
         public static view.MainShell mainShell;
 
-        public static ObservableCollection<Applicant> ApplicantCollection { get => applicantCollection; set => applicantCollection = value; }
+        public static ObservableCollection<Applicant> ApplicantCollection { get { return applicantCollection; } set { applicantCollection = value; } }
     }
 }
