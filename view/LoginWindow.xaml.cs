@@ -33,7 +33,8 @@ namespace BizApp.view
             if (vm.AuthenticateUser(txtUser.Text, TxtPass.Password ) == false)
             {
                
-                vm.MsgText = "Type any password to login :-)";
+                vm.MsgText = "Demo password is 1234 , create users and new passwords after you login";
+                MessageBox.Show("Password is incorrect", "Password");
             }
             else //if Authentication returns true proceed ....
             {
@@ -49,6 +50,14 @@ namespace BizApp.view
         private void On_Loaded(object sender, RoutedEventArgs e)
         {
             txtUser.Focus();
+        }
+
+     
+
+        private void selection_changed(object sender, SelectionChangedEventArgs e)
+        {
+            TxtPass.Clear();
+            TxtPass.Focus();
         }
     }
 }

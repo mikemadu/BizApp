@@ -11,7 +11,7 @@ namespace BizApp.viewmodel
         public LoginViewModel()
         {
             _userList = App.DataAccess.GetUsers();
-            _msgText = "For now click any name on the list and type anything for password :-)";
+            _msgText = "For these original demo names, the password is 1234";
         }
 
         private List<User> _userList;
@@ -33,6 +33,7 @@ namespace BizApp.viewmodel
                 if (value != null)
                 {
                     CanLogin = true;
+                   
                 }
                 else
                 {
